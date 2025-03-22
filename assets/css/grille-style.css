@@ -1,0 +1,71 @@
+.pasimage{
+    background-color: #999;
+    padding: 5px 10px;
+    margin: 55px 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px #fff;
+    color: black;
+}
+
+#galerieGrille {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Quatre colonnes */
+  gap: 5px;
+  width: 100%;
+  padding-left: 0;
+  background-color: #000;
+}
+
+#galerieGrille li {
+  display: flex; /* Active Flexbox sur le conteneur */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  aspect-ratio: 1 / 1; /* Maintient un carré parfait */
+  overflow: hidden; /* Cache tout débordement éventuel */
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #999;
+  padding: 2px;
+}
+
+.imageContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+}
+
+#galerieGrille img {
+  max-width: 100%; /* Limite la largeur de l'image au conteneur */
+  max-height: 100%; /* Limite la hauteur de l'image au conteneur */
+  object-fit: contain; /* Maintient le ratio d'aspect de l'image */
+  display: block; /* Évite les espaces blancs autour de l'image */
+  border-radius: 8px;
+}
+
+
+#galerieGrille a {
+  display: block;
+  width: 100%;
+  height: 100%; /* Prend toute la place du conteneur */
+}
+
+
+
+#galerieGrille img:hover {
+  transform: scale(1.02); /* Zoom léger au survol */
+}
+
+@media (max-width: 900px) {
+  #galerieGrille {
+      grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur mobile */
+  }
+}
+
+
+
+/* _______ */
+
+

@@ -1,0 +1,56 @@
+#page{
+    width: 75%;
+    margin: auto;
+    color: #b0d2e9;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#page .lerond{
+    background-color: #800000;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#page h2{
+    color: lightyellow;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    text-shadow: 1px 1px 2px #800000, 0 0 2em lightyellow, 0 0 0.2em lightyellow;
+
+}
+
+#page h3{
+    margin-top: 35px;
+    margin-bottom: 1px;
+    color: lightyellow;
+    text-shadow: 1px 1px 2px #800000, 0 0 2em lightyellow, 0 0 0.2em lightyellow;
+}
+
+#page p{
+    color: lightyellow;
+    margin: 0 0 0 0;
+    
+}
+
+#page div h6{
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+#page a{
+    text-decoration: none;
+    color: #2980b9;
+}
+#page a:hover{
+    color: #3498db;
+    text-decoration: underline;
+}
+

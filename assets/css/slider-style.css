@@ -1,0 +1,66 @@
+#slider{
+   background: azure;
+    height: 30vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #e67e22;
+    margin-bottom: 5px;
+}
+
+#slider::after{
+    content: '';
+    background-image: url(../images/scorpion.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    animation: slide 15s infinite;
+}
+
+#slider div{
+    position: absolute;
+    z-index: 1;
+}
+
+#slider p{
+    color: lightyellow;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+#slider h4{
+    color: lightyellow;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin-top: 5px;
+}
+
+#contentfrontpage{
+    width: 75%;
+    color: lightyellow;
+    margin: auto;
+}
+
+#contentfrontpage a{
+    color: #e67e22;
+    text-decoration: none;
+}
+#contentfrontpage a:hover{
+    text-decoration: underline;
+}
+
+@keyframes slide{
+    50% {transform: scale(2);}
+    100% {transform: scale(1);}
+}
+
+

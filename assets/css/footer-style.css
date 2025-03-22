@@ -1,0 +1,40 @@
+footer{
+    width: 90%;
+    margin: auto;
+    background-color: #222;
+    height: 45px;
+    margin-top: 20px;
+    padding: 0px;
+    border-top: 1px dashed #164563;
+   
+}
+
+footer p{
+    text-align: center;
+    color: chocolate;
+    font-style: italic;
+}
+
+footer a{
+    text-decoration: none;
+    color: #000;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+footer ul{
+    text-align: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li{
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 900px){
+
+}

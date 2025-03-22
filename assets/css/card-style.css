@@ -1,0 +1,124 @@
+.card{
+    border: 1px solid #b0d2e9;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 25px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(240,240,240,0.7);
+
+    display: flex;
+    
+}
+
+.card .image{
+    width: 200px;
+    height: auto;
+    max-height: 200px;
+    opacity: 0.8;
+    margin-right: 5px;
+    border-radius: 5px;
+    object-fit: contain;
+    
+}
+
+.card h3{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: #2980b9;
+    margin-top: 0;
+}
+
+.card p{
+    font-size: 1rem;
+    margin: 5px 0 0 0;
+}
+
+.card h4{
+    background-color: #2980b9;
+    width: fit-content;
+    padding: 3px 15px;
+    border: 2px solid #2980b9;
+    margin: 10px 0;
+    transition: 0.5s;
+}
+.card h4:hover{
+    background-color: transparent;
+    
+}
+
+.card h4 a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 1rem;
+}
+.card h4 a:hover{
+    color: #2980b9;
+}
+
+.card section{
+    margin-top: 10px;
+}
+
+.card section p:last-child{
+    font-size: 0.9rem;
+}
+
+.pagination{
+    text-align: center;
+}
+
+.pagination a{
+    display: inline-block;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.pagination a:hover{
+    background: none;
+}
+
+.page-numbers{
+    color: #2980b9;
+}
+
+@media screen and (max-width: 950px){
+    .card{
+        flex-direction: column;
+    }
+    .card .image{
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        margin: auto;
+        border-radius: 5px;
+        /* border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; */
+    }
+    .card section{
+        margin-top: 20px;
+
+    }
+    .card h3, .card section p:last-child{
+        text-align: center;
+    }
+    .card p{
+        text-align: center;
+        padding: 0 7px;
+    }
+    .card h4{
+        margin: auto;
+        margin-top: 5px;
+    }
+
+    .pagination{
+        position: static;
+        height: auto;
+        margin-bottom: 50px;
+    }
+
+}
+
