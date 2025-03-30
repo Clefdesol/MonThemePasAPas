@@ -22,6 +22,8 @@
     position: relative;
     width: 90vw;  /* 90% de la largeur de la fenêtre */
     height: 90vh; /* 90% de la hauteur de la fenêtre */
+   
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,13 +33,29 @@
 #lightbox-image {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Garde les proportions de l'image */
+    border-radius: 10px;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
+
+.hidden-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.hidden-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+
+
 /* Close button */
+
 .close-btn {
     position: absolute;
-    top: -20px;
+    top: -40px;
     right: -20px;
     font-size: 30px;
     color: white;
@@ -45,27 +63,56 @@
     border: none;
     cursor: pointer;
     margin-right: 50px;
+    
 }
 
 /* Arrows */
 .arrow {
     position: absolute;
-    top: 15%;
-    transform: translateY(-50%);
+    top: 50%;
+    /* transform: translateY(-50%); */
     font-size: 40px;
     color: white;
     background-color: transparent;
     border: none;
     cursor: pointer;
+    
 }
 
 .left-arrow {
     left: 0px; /* Ajustez selon vos besoins */
+    z-index: 10000;
 }
 
 .right-arrow {
     right: 0px; /* Ajustez selon vos besoins */
 }
+
+
+@media (max-width: 768px) {
+    .lightbox-content {
+        width: 95vw; /* Réduit la largeur pour petits écrans */
+        height: auto;
+    }
+
+    #lightbox-image {
+        max-width: 95%;
+        max-height: 95%;
+    }
+    /* Cacher les flèches uniquement sur les écrans tactiles */
+    .touch-device .left-arrow,
+    .touch-device .right-arrow {
+        display: none;
+    }
+
+/* Les flèches restent visibles sur les petits écrans non tactiles */
+    .no-touch-device .left-arrow,
+    .no-touch-device .right-arrow {
+     display: block;
+    }
+}
+
+
 
 
 

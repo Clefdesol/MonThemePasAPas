@@ -1,6 +1,6 @@
 <?php
 /* ******* Version du thème */
-define('VERSION', '1.0.6');
+define('VERSION', '1.2.01');
 
 /* ******* Charger les styles et les scripts */
 function tutocarlapp_cssjs(){

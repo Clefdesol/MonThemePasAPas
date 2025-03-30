@@ -1,3 +1,20 @@
+/* Pour donner l'info si on a un écran Touch ou pas */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    if (isTouchDevice) {
+        document.body.classList.add('touch-device');
+        document.body.classList.remove('no-touch-device');
+    } else {
+        document.body.classList.add('no-touch-device');
+        document.body.classList.remove('touch-device');
+    }
+});
+
+
+
+
 console.log('Script chargé');
 document.addEventListener('DOMContentLoaded', () => {
     const lightbox = document.getElementById('simpleLightbox');
@@ -6,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
     const triggers = document.querySelectorAll('.lightbox-trigger');
-    
+
     if (!lightbox || !lightboxImage || !closeBtn || !leftArrow || !rightArrow || triggers.length === 0) {
         console.error('Éléments de lightbox manquants');
-        return; // Arrête l'exécution si des éléments sont manquants
+        return;
     }
 
     const images = Array.from(triggers).map(trigger => trigger.href);
@@ -42,21 +59,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navigation avec les flèches
     leftArrow.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length; // Image précédente
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
         updateLightboxImage();
         console.log('Navigation vers l\'image précédente');
     });
 
     rightArrow.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length; // Image suivante
+        currentIndex = (currentIndex + 1) % images.length;
         updateLightboxImage();
         console.log('Navigation vers l\'image suivante');
     });
 
-});
-
-/* Pour le balayage */
-let touchStartX = 0;
+    /* Pour le balayage */
+    let touchStartX = 0;
 let touchEndX = 0;
 
 function handleTouchStart(event) {
@@ -70,20 +85,27 @@ function handleTouchMove(event) {
 function handleTouchEnd() {
     if (touchStartX - touchEndX > 50) {
         // Balayage vers la gauche
-        navigateImage(1);
-    }
-    if (touchEndX - touchStartX > 50) {
+        lightboxImage.style.transform = 'translateX(-100%)'; // Déplace l'image à gauche
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateLightboxImage();
+            lightboxImage.style.transform = 'translateX(0)'; // Ramène l'image au centre
+        }, 500); // Attendre la fin de la transition
+    } else if (touchEndX - touchStartX > 50) {
         // Balayage vers la droite
-        navigateImage(-1);
+        lightboxImage.style.transform = 'translateX(100%)'; // Déplace l'image à droite
+        setTimeout(() => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateLightboxImage();
+            lightboxImage.style.transform = 'translateX(0)'; // Ramène l'image au centre
+        }, 500); // Attendre la fin de la transition
     }
 }
 
-function navigateImage(direction) {
-    currentIndex = (currentIndex + direction + images.length) % images.length;
-    updateLightboxImage();
-}
+
 
 lightbox.addEventListener('touchstart', handleTouchStart, false);
 lightbox.addEventListener('touchmove', handleTouchMove, false);
 lightbox.addEventListener('touchend', handleTouchEnd, false);
 
+});
