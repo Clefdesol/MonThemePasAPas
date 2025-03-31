@@ -6,6 +6,8 @@ $images = get_posts(array(
     'post_type' => 'attachment',
     'post_mime_type' => 'image/jpeg, image/jpg, image/png',
     'post_parent' => get_the_ID(),
+    'order' => 'ASC', // Changez "DESC" en "ASC"
+    'orderby' => 'ID'
 ));
 
 if(count($images) > 0) : ?>

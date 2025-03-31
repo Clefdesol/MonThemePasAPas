@@ -1,6 +1,6 @@
 <?php
 /* ******* Version du thème */
-define('VERSION', '1.2.06');
+define('VERSION', '1.2.01');
 
 /* ******* Charger les styles et les scripts */
 function tutocarlapp_cssjs(){
@@ -80,11 +80,6 @@ function tutocarlapp_entete(){
         
 }
 add_action('after_setup_theme', 'tutocarlapp_entete');
-
-
-/* Pour ordre des images */
-
-
 ?>
 
 
