@@ -3,6 +3,7 @@
 <?php get_template_part('include', 'header'); ?>
 
 <article>
+
     <section class="article">
         <?php if (has_post_thumbnail()): ?>
             <div class="imgarticle" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"></div> <!-- Boite div de l'image -->

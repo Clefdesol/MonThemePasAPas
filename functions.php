@@ -1,6 +1,6 @@
 <?php
 /* ******* Version du thème */
-define('VERSION', '1.2.06');
+define('VERSION', '1.3.00');
 
 /* ******* Charger les styles et les scripts */
 function tutocarlapp_cssjs(){
@@ -82,7 +82,29 @@ function tutocarlapp_entete(){
 add_action('after_setup_theme', 'tutocarlapp_entete');
 
 
-/* Pour ordre des images */
+/* Pour thèmes différents dans articles */
+add_filter('single_template', 'custom_single_template');
+
+function custom_single_template($single) {
+    global $post;
+
+    // Récupérer la valeur du champ personnalisé ACF
+    $sans_menu = get_field('sans_menu', $post->ID);
+
+    // Vérifier si le champ "sans_menu" est activé
+    if ($sans_menu) {
+        return get_template_directory() . '/single_sansMenu.php';
+    }
+
+    // Utiliser le template par défaut si aucune condition n'est remplie
+    return $single;
+}
+
+/* Pour remplacé le préfixe "protégé" avant le titre par * */
+function custom_protected_title_format($format) {
+    return '★ %s'; // Remplacez ★ par l’astérisque ou le symbole de votre choix
+}
+add_filter('protected_title_format', 'custom_protected_title_format');
 
 
 ?>

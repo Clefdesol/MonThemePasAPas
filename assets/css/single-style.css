@@ -58,3 +58,14 @@
         width: 90%;
     }
 }
+
+/* ********* POUR LES ARTICLES SANS MENU ********** */
+.header-sans-menu{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-sans_menu{
+    width: 70px;
+}

@@ -13,14 +13,21 @@ $images = get_posts(array(
 if(count($images) > 0) : ?>
 
      <!-- Lightbox -->
-        <div id="simpleLightbox">
-        <div class="lightbox-content">
-            <span class="close-btn">&times;</span>
-            <button class="arrow left-arrow">&larr;</button>
+     <div id="simpleLightbox">
+    <div class="lightbox-content">
+        <span class="close-btn">&times;</span>
+        <button class="arrow left-arrow">&larr;</button>
+        
+        <div class="lightbox-image-container">
             <img src="" alt="Image agrandie" id="lightbox-image">
-            <button class="arrow right-arrow">&rarr;</button>
+            <div id="lightbox-caption" class="lightbox-caption"></div>
         </div>
+        
+        <button class="arrow right-arrow">&rarr;</button>
     </div>
+</div>
+
+         
 
     <!-- Galerie -->
 
